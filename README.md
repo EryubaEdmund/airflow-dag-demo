@@ -294,6 +294,23 @@ docker compose down
 # Full reset — deletes all data including DB state
 docker compose down -v --remove-orphans
 ```
+---
+## Visuals
+__TaskAPI and traditional operators dag runs__
+
+<img width="1867" height="1047" alt="Dags runs" src="https://github.com/user-attachments/assets/4ec03cdf-88c3-414b-93cc-9278c9461642" />
+
+---
+
+__Airflow task view: TaskAPI pipeline__
+
+<img width="1868" height="1052" alt="image" src="https://github.com/user-attachments/assets/a1a128ab-a87e-44a3-b64d-a021c9df81a9" />
+
+---
+
+__Airflow task view: Traditional operators__
+
+<img width="1868" height="1051" alt="Screenshot 2026-04-30 141433" src="https://github.com/user-attachments/assets/d07be439-cece-480f-9ddf-cf8eb5fcdb58" />
 
 ---
 
