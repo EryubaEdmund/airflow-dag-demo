@@ -1,0 +1,15 @@
+# docker-compose.override.yml
+# Mounts the local ./dags folder into every Airflow service so changes
+# are picked up without rebuilding the image.
+version: "3.8"
+
+services:
+  airflow-webserver:
+    volumes:
+      - ./dags:/opt/airflow/dags
+  airflow-scheduler:
+    volumes:
+      - ./dags:/opt/airflow/dags
+  airflow-worker:
+    volumes:
+      - ./dags:/opt/airflow/dags
