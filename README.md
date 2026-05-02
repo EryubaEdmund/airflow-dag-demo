@@ -53,9 +53,9 @@ Both DAGs in this project implement a classic **ETL** (Extract → Transform →
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Airflow Cluster                         │
 │                                                                 │
-│  ┌──────────┐   schedules   ┌───────────┐   queues   ┌───────┐ │
-│  │Scheduler │ ────────────► │   Redis   │ ─────────► │Worker│ │
-│  └──────────┘               └───────────┘            └───────┘ │
+│  ┌──────────┐   schedules   ┌───────────┐   queues   ┌───────┐  │
+│  │Scheduler │ ────────────► │   Redis   │ ─────────► │Worker │  │
+│  └──────────┘               └───────────┘            └───────┘  │
 │       │                                                   │     │
 │       │  reads/writes                        reads/writes │     │
 │       ▼                                                   ▼     │
@@ -64,9 +64,9 @@ Both DAGs in this project implement a classic **ETL** (Extract → Transform →
 │  │          DAG runs · task states · XCom values            │   │
 │  └──────────────────────────────────────────────────────────┘   │
 │                                                                 │
-│  ┌──────────────┐                                              │
-│  │  Webserver   │  ← http://localhost:8080                     │
-│  └──────────────┘                                              │
+│  ┌──────────────┐                                               │
+│  │  Webserver   │  ← http://localhost:8080                      │
+│  └──────────────┘                                               │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -102,10 +102,10 @@ with DAG(dag_id="...", schedule="@daily", ...) as dag:
     extract_task >> transform_task >> load_task
 ```
 
-**When to use:**
+**When used:**
 - Maintaining legacy Airflow 1.x code
 - Using non-Python operators (BashOperator, S3CopyObjectOperator, etc.)
-- Tasks with complex operator-level configuration (pools, SLAs, trigger rules)
+
 
 ---
 
@@ -136,7 +136,7 @@ def my_pipeline():
 my_pipeline()
 ```
 
-**When to use:**
+**When used:**
 - All-Python pipelines on Airflow 2.0+
 - You want cleaner, more testable code
 - You prefer implicit XCom over manual push/pull
